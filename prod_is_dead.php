@@ -9,7 +9,7 @@ while (1) {
 	$status = curl_exec($ch);
 	$timeres = microtime(true) - $time;
 	$code = curl_getinfo($ch)['http_code'];
-	echo "Code ".$code." for {$timeres} sec \r\n";
+	//echo "Code ".$code." for {$timeres} sec \r\n";
 	if ($code != 200){ 
 		telegram_send("{$url} seems dead from here, code {$code}");
 		sleep(5*$multiplier);
